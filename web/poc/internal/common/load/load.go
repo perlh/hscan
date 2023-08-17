@@ -4,7 +4,6 @@ import (
 	"hscan/utils/logger"
 	"hscan/web/poc/utils"
 	"path/filepath"
-	"strconv"
 	"strings"
 
 	"github.com/yargevad/filepathx"
@@ -63,12 +62,6 @@ func LoadPocs(pocPath string) (map[string]xray_structs.Poc, map[string]nuclei_st
 			LoadPoc(pocFile)
 		}
 	}
-
-	logger.Info(logger.LightGreen("Load ") +
-		// logger.White(strconv.Itoa(len(xrayPocMap))) +
-		// logger.LightGreen(" xray poc(s), ") +
-		logger.White(strconv.Itoa(len(nucleiPocMap))) +
-		logger.LightGreen(" nuclei poc(s)"))
 
 	return xrayPocMap, nucleiPocMap
 }

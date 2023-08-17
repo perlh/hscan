@@ -8,8 +8,8 @@ import (
 	"hscan/parse"
 	"hscan/probe"
 	"hscan/utils/logger"
+	"hscan/web/fscan"
 	"hscan/web/poc"
-	"hscan/web/pocv1"
 	"time"
 )
 
@@ -19,9 +19,18 @@ func main() {
 	parse.Flag(&common.InputInfo)
 	parse.Parse(&common.InputInfo, &common.RunningInfo)
 	probe.Probe()
+
 	discover.Discover()
-	pocv1.Poc()
-	poc.Poc()
+	// Xray v1 Scan
+	fscan.Poc()
+	//logger.Banner("x")
+
+	poc.XrayPoc()
+	poc.NucleiPoc()
+
+	// Xray v2 Scan
+	// TODO Xray v2
+	// Nuclei Scan
 	nonweb.Service()
 	logger.Info(fmt.Sprintf("Task finish, consumption of time: %s", time.Now().Sub(startTime)))
 }

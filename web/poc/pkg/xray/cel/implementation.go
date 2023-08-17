@@ -485,11 +485,11 @@ func xrayNewReverse() (reverse *structs.Reverse) {
 
 	switch common.RunningInfo.ReversePlatformType {
 	case structs.ReverseType_Ceye:
-		fmt.Println("Ceye!!!")
+		//fmt.Println("Ceye!!!")
 		sub := utils.RandomStr(utils.AsciiLowercaseAndDigits, 8)
 		urlStr = fmt.Sprintf("http://%s.%s/", sub, common.RunningInfo.CeyeDomain)
 	case structs.ReverseType_DnslogCN:
-		fmt.Println("DNSLOG!!!")
+		//fmt.Println("DNSLOG!!!")
 		dnslogCnRequest := common.RunningInfo.DnslogCNGetDomainRequest
 		resp, _, err := requests.DoRequest(dnslogCnRequest, false)
 		if err != nil {

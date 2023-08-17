@@ -24,7 +24,7 @@ func Discover() {
 	Args["Mode"] = common.RunningInfo.DiscoverMode
 	Args["Type"] = common.RunningInfo.DiscoverType
 
-	logger.Info("Start to discover the ports")
+	logger.Banner("Start Host Discovery! ")
 	intSyncThread := 0
 	intAll := 0
 	intIde := 0

@@ -6,7 +6,7 @@ import (
 )
 
 func Flag(Info *common.InputInfoStruct) {
-	flag.StringVar(&Info.Host, "h", "", "IP address of the host you want to scan,for example: 192.168.11.11 | 192.168.11.11-255 | 192.168.11.11,192.168.11.12")
+	flag.StringVar(&Info.Host, "h", "", "IP address of the hostp you want to scan,for example: 192.168.11.11 | 192.168.11.11-255 | 192.168.11.11,192.168.11.12")
 	flag.StringVar(&Info.HostFile, "hf", "", "File of IP address")
 
 	flag.StringVar(&Info.Mode, "m", "all", "Select scan mode")
@@ -43,8 +43,8 @@ func Flag(Info *common.InputInfoStruct) {
 	flag.BoolVar(&Info.PocDebug, "pocdebug", false, "print failed pocs")
 	flag.IntVar(&Info.PocThread, "pocthread", 10, "poc thread")
 	flag.IntVar(&Info.PocTimeout, "poctimeout", 20, "poc timeout")
-	flag.StringVar(&Info.NucleiPocPath, "nucleipocpath", "pocs/nuclei/**", "Nuclei poc path") //  pocs/nuclei/**
-	flag.StringVar(&Info.FscanPocPath, "fscanpocpath", "pocs/xrayv1/", "Fscan poc path")      // pocs/fscan/**
+	flag.StringVar(&Info.NucleiPocPath, "nucleipocpath", "web/pocs/nuclei/**", "Nuclei poc path") //  pocs/nuclei/**
+	flag.StringVar(&Info.FscanPocPath, "fscanpocpath", "web/pocs/xrayv1/", "Fscan poc path")      // pocs/fscan/**
 	flag.BoolVar(&Info.Nuclei, "nuclei", false, "no nuclei")
 
 	flag.BoolVar(&Info.NoReverse, "noreverse", false, "no reverse platform")

@@ -19,6 +19,7 @@ var (
 	Purple      = color.Style{color.Magenta, color.OpBold}.Render
 	LightRed    = color.Style{color.Red, color.OpBold}.Render
 	LightGreen  = color.Style{color.Green, color.OpBold}.Render
+	LightBlue   = color.Style{color.Blue, color.OpBold}.Render
 	LightWhite  = color.Style{color.White, color.OpBold}.Render
 	LightCyan   = color.Style{color.Cyan, color.OpBold}.Render
 	LightYellow = color.Style{color.Yellow, color.OpBold}.Render
@@ -100,6 +101,10 @@ func Common(detail string) {
 	log(LevelInfo, fmt.Sprintf("[%s] [%s] %s", Cyan(GetTime()), LightGreen("*"), detail))
 }
 
+func Banner(detail string) {
+	log(LevelInfo, fmt.Sprintf("[%s] [%s] %s", Cyan(GetTime()), LightBlue("MODE"), detail))
+}
+
 func GetTime() string {
 	return time.Now().Format("15:04:05")
 }
@@ -131,8 +136,9 @@ func WriteLogFile(result string, filename string) {
 		fmt.Printf("Open %s error, %v\n", filename, err)
 		return
 	}
+	defer fl.Close()
 	_, err = fl.Write(text)
-	fl.Close()
+	//fl.Close()
 	if err != nil {
 		fmt.Printf("Write %s error, %v\n", filename, err)
 	}
