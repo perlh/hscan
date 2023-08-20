@@ -101,16 +101,21 @@ func Discover() {
 		}
 	} else {
 		for _, host := range actualHosts {
+			// 扫描常见端口
 			for _, port := range ports {
 				wg.Add(1)
 				intSyncThread++
+				// 多线程扫描
 				go func(host string, port int, Args map[string]interface{}) {
+
 					res := protocol.Discover(host, port, Args)
 					if res["status"].(string) == "open" {
 						intAll++
 						parse.VerboseParse(res)
 						//output.JsonOutput(res, "save")
+						//log.Println(common.DiscoverResults, res)
 						common.DiscoverResults = append(common.DiscoverResults, res)
+
 						if strings.Contains(res["uri"].(string), "://") {
 							intIde++
 						}
@@ -131,5 +136,4 @@ func Discover() {
 		logger.LightGreen(" targets, the rule base hits ") +
 		logger.White(strconv.Itoa(intIde)) +
 		logger.LightGreen(" targets"))
-	//output.JsonOutput(make(map[string]interface{}), "write")
 }

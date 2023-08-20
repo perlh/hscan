@@ -1,10 +1,11 @@
 module hscan
 
-go 1.18
+go 1.20
 
 require (
 	github.com/bluele/gcache v0.0.2
 	github.com/denisenkom/go-mssqldb v0.12.2
+	github.com/dimiro1/banner v1.1.0
 	github.com/dlclark/regexp2 v1.4.0
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/golang/protobuf v1.5.2
@@ -53,7 +54,6 @@ require (
 	github.com/common-nighthawk/go-figure v0.0.0-20200609044655-c4b36f998cf2 // indirect
 	github.com/corpix/uarand v0.1.1 // indirect
 	github.com/dimchansky/utfbom v1.1.1 // indirect
-	github.com/dimiro1/banner v1.1.0 // indirect
 	github.com/docker/go-units v0.4.0 // indirect
 	github.com/dsnet/compress v0.0.1 // indirect
 	github.com/fatih/structs v1.1.0 // indirect

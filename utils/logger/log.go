@@ -104,6 +104,9 @@ func Common(detail string) {
 func Banner(detail string) {
 	log(LevelInfo, fmt.Sprintf("[%s] [%s] %s", Cyan(GetTime()), LightBlue("MODE"), detail))
 }
+func Input(detail string) {
+	log(LevelInfo, fmt.Sprintf("[%s] [%s] %s", Cyan(GetTime()), LightGreen("INPUT"), detail))
+}
 
 func GetTime() string {
 	return time.Now().Format("15:04:05")
@@ -131,11 +134,15 @@ func Clean(str string) string {
 
 func WriteLogFile(result string, filename string) {
 	var text = []byte(result + "\n")
+	//os.O_WRONLY：以只写模式打开文件。
+	//os.O_CREATE：如果文件不存在，创建一个新文件。
+	//os.O_APPEND：在文件末尾追加内容。
 	fl, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0666)
 	if err != nil {
 		fmt.Printf("Open %s error, %v\n", filename, err)
 		return
 	}
+
 	defer fl.Close()
 	_, err = fl.Write(text)
 	//fl.Close()

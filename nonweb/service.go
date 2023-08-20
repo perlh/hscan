@@ -9,7 +9,7 @@ import (
 )
 
 func Service() {
-	logger.Info("Start to process nonweb services")
+	logger.Banner("Start to process nonweb services")
 	for _, discoverResult := range common.DiscoverResults {
 		var info utils.HostInfo
 		info.Host = discoverResult["host"].(string)

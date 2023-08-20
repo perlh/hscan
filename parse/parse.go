@@ -73,7 +73,6 @@ func Parse(InputInfo *common.InputInfoStruct, RunningInfo *common.RunningInfoStr
 	RunningInfo.PocRate = InputInfo.PocRate
 	RunningInfo.PocThread = InputInfo.PocThread
 
-	RunningInfo.FscanPocPath = InputInfo.FscanPocPath
 	RunningInfo.NucleiPocPath = InputInfo.NucleiPocPath
 	RunningInfo.PocDebug = InputInfo.PocDebug
 
@@ -93,7 +92,5 @@ func Parse(InputInfo *common.InputInfoStruct, RunningInfo *common.RunningInfoStr
 	RunningInfo.PocSocks5Proxy = InputInfo.BruteSocks5Proxy
 
 	RunningInfo.Nuclei = InputInfo.Nuclei
-	RunningInfo.BruteThread = InputInfo.BruteThread
 
-	RunningInfo.NoReverse = InputInfo.NoReverse
 }

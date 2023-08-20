@@ -1,0 +1,67 @@
+# 默认配置文件
+
+# 主机相关配置
+host: example.com
+hostFile: hosts.txt
+
+# 模式和输出配置
+mode: fast
+outputFileName: output.txt
+
+# 其他配置项
+noProbe: false
+silent: false
+noSave: false
+noColor: false
+logLevel: 1
+liveTop: 10
+portsOnly: ""
+portsAdd: ""
+thread: 10
+proxy: ""
+timeout: 5
+
+# 发现模式和类型配置
+discoverMode: normal
+discoverType: all
+
+# JSON 输出配置
+outJson: ""
+
+# Ceye 配置
+ceyeKey: ""
+ceyeDomain: "cqd9zi.ceye.io"
+
+# Brute 相关配置
+noBrute: false
+noPoc: false
+pocRate: 100
+pocDebug: false
+pocThread: 20
+pocTimeout: 5
+nucleiPocPath: ""
+nuclei: true
+xray: true
+
+# 自定义命令配置
+command: ""
+
+# SSH 配置
+sshKey: ""
+
+# Brute 调试配置
+bruteDebug: false
+bruteTimeout: 5
+bruteSocks5Proxy: ""
+bruteThread: 10
+usernameAdd: ""
+passwordAdd: ""
+
+# Redis 相关配置
+redisFile: ""
+redisShell: ""
+
+# 直接访问 URL 配置
+directUrl: ""
+directUrlFile: ""
+directUrlForce: false

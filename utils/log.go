@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"hscan/common"
 	"os"
+
 	"strings"
 	"sync"
 	"time"

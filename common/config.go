@@ -1,72 +1,68 @@
 package common
 
 import (
-	xray_structs "hscan/web/poc/pkg/xray/structs"
+	xray_structs "hscan/web/pkg/xray/structs"
 	"net/http"
 )
 
 var version = "0.0.1"
 
 type InputInfoStruct struct {
-	Host           string
-	HostFile       string
-	PortsAdd       string
-	PortsOnly      string
-	Mode           string
-	OutputFileName string
+	Host           string `yaml:"host"`
+	HostFile       string `yaml:"hostFile"`
+	PortsAdd       string `yaml:"portsAdd"`
+	PortsOnly      string `yaml:"portsOnly"`
+	Mode           string `yaml:"mode"`
+	OutputFileName string `yaml:"outputFileName"`
 
-	SkipHost string
-	LiveTop  int
-	Silent   bool
-	NoSave   bool
-	NoColor  bool
-	LogLevel int
-	Thread   int
-	NoProbe  bool
+	SkipHost string `yaml:"skipHost"`
+	LiveTop  int    `yaml:"liveTop"`
+	Silent   bool   `yaml:"silent"`
+	NoSave   bool   `yaml:"noSave"`
+	NoColor  bool   `yaml:"noColor"`
+	LogLevel int    `yaml:"logLevel"`
+	Thread   int    `yaml:"thread"`
+	NoProbe  bool   `yaml:"noProbe"`
 
-	Proxy        string
-	Timeout      int
-	DiscoverMode string
-	DiscoverType string
-	OutJson      string
+	Proxy        string `yaml:"proxy"`
+	Timeout      int    `yaml:"timeout"`
+	DiscoverMode string `yaml:"discoverMode"`
+	DiscoverType string `yaml:"discoverType"`
+	OutJson      string `yaml:"outJson"`
 
-	CeyeKey    string
-	CeyeDomain string
+	CeyeKey    string `yaml:"ceyeKey"`
+	CeyeDomain string `yaml:"ceyeDomain"`
 
-	NucleiPocPath string
-	FscanPocPath  string
-	PocRate       int
-	PocDebug      bool
-	PocThread     int
-	PocTimeout    int
+	NucleiPocPath string `yaml:"nucleiPocPath"`
+	PocRate       int    `yaml:"pocRate"`
+	PocDebug      bool   `yaml:"pocDebug"`
+	PocThread     int    `yaml:"pocThread"`
+	PocTimeout    int    `yaml:"pocTimeout"`
 
-	BruteTimeout int
+	BruteTimeout int `yaml:"bruteTimeout"`
 
-	Nuclei bool
+	Nuclei  bool `yaml:"nuclei"`
+	Xray    bool `yaml:"xray"`
+	NoPoc   bool `yaml:"noPoc"`
+	NoBrute bool `yaml:"noBrute"`
 
-	NoPoc   bool
-	NoBrute bool
+	Command string `yaml:"command"`
+	SSHKey  string `yaml:"SSHKey"`
 
-	Command string
-	SSHKey  string
+	PasswordAdd string `yaml:"passwordAdd"`
+	UsernameAdd string `yaml:"usernameAdd"`
 
-	PasswordAdd string
-	UsernameAdd string
+	BruteThread      int    `yaml:"bruteThread"`
+	BruteDebug       bool   `yaml:"bruteDebug"`
+	BruteSocks5Proxy string `yaml:"bruteSocks5Proxy"`
+	RedisFile        string `yaml:"redisFile"`
+	RedisShell       string `yaml:"redisShell"`
 
-	BruteThread      int
-	BruteDebug       bool
-	BruteSocks5Proxy string
-	RedisFile        string
-	RedisShell       string
+	DirectUrl      string `yaml:"directUrl"`
+	DirectUrlFile  string `yaml:"directUrlFile"`
+	DirectUrlForce bool   `yaml:"directUrlForce"`
 
-	DirectUrl      string
-	DirectUrlFile  string
-	DirectUrlForce bool
-
-	FofaKey    string
-	FofaSecret string
-
-	NoReverse bool
+	NoReverse bool `yaml:"noReverse"`
 }
 type FileInfoStruct struct {
 }
@@ -107,7 +103,6 @@ type RunningInfoStruct struct {
 	XrayV1CeyeDomain string
 
 	NucleiPocPath  string
-	FscanPocPath   string
 	PocTimeout     int
 	PocRate        int
 	PocDebug       bool
@@ -157,30 +152,7 @@ var DefaultHeader = map[string]string{
 	"Cookie":          "rememberMe=True",
 }
 
-var DiscoverResultStruct = map[string]interface{}{
-	"status":          "", // open
-	"banner.byte":     "", //
-	"banner.string":   "", //
-	"protocol":        "", // ssh http https redis
-	"type":            "", // tcp tls udp
-	"host":            "", // IP地址
-	"port":            "", //
-	"uri":             "", //
-	"note":            "", //
-	"path":            "",
-	"identify.bool":   false, // 是否匹配到服务
-	"identify.string": "",    // 匹配到服务的关键词
-}
-
 var DiscoverResults = make([]map[string]interface{}, 0)
-
-//var DiscoverResults []interface{}
-
-//type DiscoverResultStruct struct {
-//
-//}
-//
-//var DiscoverResults = []DiscoverResultStruct
 
 var Userdict = map[string][]string{
 	"ftp":        {"ftp", "admin", "www", "web", "root", "db", "wwwroot", "data"},
@@ -204,6 +176,7 @@ var Passwords = []string{"123456", "admin", "admin123", "root", "root123", "", "
 var ServiceToPortString = map[string]string{
 	"ftp":      "21",
 	"ssh":      "22",
+	"kerberos": "88",
 	"redis":    "6379",
 	"smb":      "445",
 	"mysql":    "3306",
@@ -214,4 +187,6 @@ var ServiceToPortString = map[string]string{
 	"memcache": "11211",
 	"mongo":    "27017",
 	"netbios":  "135",
+	"docker":   "2375",
+	//"docker":   "2376",
 }

@@ -16,6 +16,8 @@ import (
 	"time"
 )
 
+// 探测
+
 var (
 	AliveHosts []string
 	OS         = runtime.GOOS
