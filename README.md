@@ -7,7 +7,6 @@
 - poc探测( xray v2 & nuclei 格式)
 - 数据库等弱口令爆破
 - 内网常见漏洞利用
-- 基于nacs二次开发，兼容大部分nacs命令。
 
 ### 快速使用
 
@@ -23,8 +22,9 @@ sudo ./hscan -uf url文件
 
 - (1) 资产扫描
   ```
-  sudo ./hscan -h 127.0.0.1/24
+  sudo ./hscan -h 127.0.0.1
   ```
+![pages1](docs/pages1.png)
 
 - (2) poc探测 (默认使用 xray poc 和 neclei poc 扫描),如需反联验证，请配置好 ceyeKey 和 ceyedomain 参数（命令行 | config.yaml）。
   ```

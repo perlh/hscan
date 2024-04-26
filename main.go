@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"gopkg.in/yaml.v2"
 	"hscan/common"
 	"hscan/discover"
 	"hscan/nonweb"
@@ -12,6 +11,8 @@ import (
 	"hscan/web"
 	"io/ioutil"
 	"time"
+
+	"gopkg.in/yaml.v2"
 )
 
 func loadConfig(filename string) common.InputInfoStruct {
