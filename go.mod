@@ -8,16 +8,15 @@ require (
 	github.com/dimiro1/banner v1.1.0
 	github.com/dlclark/regexp2 v1.4.0
 	github.com/go-sql-driver/mysql v1.6.0
-	github.com/golang/protobuf v1.5.2
+	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/cel-go v0.6.0
 	github.com/gookit/color v1.5.0
 	github.com/jlaffaye/ftp v0.0.0-20190624084859-c1312a7102bf
 	github.com/lib/pq v1.10.6
 	github.com/logrusorgru/aurora v2.0.3+incompatible
-	github.com/panjf2000/ants v1.3.0
+	// github.com/panjf2000/ants
 	github.com/projectdiscovery/nuclei/v2 v2.7.1
 	github.com/remeh/sizedwaitgroup v1.0.0
-	github.com/satori/go.uuid v1.2.0
 	github.com/sijms/go-ora/v2 v2.4.26
 	github.com/spaolacci/murmur3 v1.1.0
 	github.com/stacktitan/smb v0.0.0-20190531122847-da9a425dceb8
@@ -95,7 +94,6 @@ require (
 	github.com/lor00x/goldap v0.0.0-20180618054307-a546dffdd1a3 // indirect
 	github.com/lufia/plan9stats v0.0.0-20211012122336-39d0f177ccd0 // indirect
 	github.com/lunixbochs/struc v0.0.0-20200707160740-784aaebc1d40 // indirect
-	github.com/mattn/go-colorable v0.1.4 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mholt/acmez v1.0.2 // indirect
 	github.com/mholt/archiver v3.1.1+incompatible // indirect
@@ -106,6 +104,7 @@ require (
 	github.com/nwaples/rardecode v1.1.2 // indirect
 	github.com/openrdap/rdap v0.9.1-0.20191017185644-af93e7ef17b7 // indirect
 	github.com/owenrumney/go-sarif/v2 v2.1.1 // indirect
+	github.com/panjf2000/ants v1.3.0
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 	github.com/pkg/errors v0.9.1 // indirect
@@ -169,8 +168,13 @@ require (
 	google.golang.org/appengine v1.6.7 // indirect
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6 // indirect
 	gopkg.in/corvus-ch/zbase32.v1 v1.0.0 // indirect
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 	moul.io/http2curl v1.0.0 // indirect
+)
+
+require (
+	github.com/stretchr/testify v1.8.2 // indirect
+	golang.org/x/sync v0.3.0 // indirect
 )
 
 replace github.com/tomatome/grdp v0.0.0-20211231062539-be8adab7eaf3 => github.com/shadow1ng/grdp v1.0.3
